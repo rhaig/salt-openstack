@@ -1,7 +1,6 @@
 openstack: 
-  "<minion_id_1>,<minion_id_2>":
-    - match: list
+  "OS*":
     - {{ grains['os'] }}
-    - <cluster_name>.cluster_resources
-    - <cluster_name>.access_resources
-    - <cluster_name>.network_resources
+    - rhaig.cluster_resources
+    - rhaig.access_resources
+    - rhaig.network_resources
