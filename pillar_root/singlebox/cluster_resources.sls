@@ -1,4 +1,4 @@
-cluster_name: "rhaig"
+cluster_name: "singlebox"
 
 cluster_type: "juno"
 
@@ -6,13 +6,10 @@ db_engine: "mysql"
 
 queue_engine: "rabbit"
 
-#reset: "soft"
+#reset: "<soft/hard>"
 
 hosts: 
   "OS-cont": "192.168.0.201"
-  "OS-net": "192.168.0.202"
-  "OS-stg": "192.168.0.203"
-  "OS-comp": "192.168.0.204"
 
 roles:
   - "controller"
@@ -21,11 +18,11 @@ roles:
   - "compute"
 
 controller: "OS-cont"
-network: "OS-net"
+network: "OS-cont"
 storage:
-  - "OS-stg"
+  - "OS-cont"
 compute: 
-  - "OS-comp"
+  - "OS-cont"
 
 sls: 
   - controller: 
@@ -66,7 +63,7 @@ sls:
 #glance image-create --copy-from http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img --disk-format qcow2 --container-format bare --name 'CirrOS'
 glance:
   images:
-    "CirrOS":
+    CirrOS:
       min_disk: "0"
       min_ram: "0"
       copy_from: "http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img"
@@ -75,12 +72,12 @@ glance:
       disk_format: "qcow2"
       container_format: "bare"
       is_public: "True"
-      protected: "True"
+      protected: "False"
 
 cinder:
   volumes_group_name: "cinder-volumes"
   volumes_path: "/var/lib/cinder/cinder-volumes"
-  volumes_group_size: "1"
+  volumes_group_size: "10"
   loopback_device: "/dev/loop0"
 
 nova:
@@ -89,4 +86,4 @@ nova:
 
 files:
   keystone_admin:
-    path: "/root/openrc"
+    path: "/root/openrc/"
