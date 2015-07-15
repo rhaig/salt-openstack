@@ -6,7 +6,7 @@ db_engine: "mysql"
 
 queue_engine: "rabbit"
 
-reset: "hard"
+reset: "soft"
 
 hosts: 
   "OS-cont": "192.168.0.201"
