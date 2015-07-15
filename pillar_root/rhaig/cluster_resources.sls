@@ -66,7 +66,7 @@ sls:
 #glance image-create --copy-from http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img --disk-format qcow2 --container-format bare --name 'CirrOS'
 glance:
   images:
-    "CirrOS":
+    CirrOS:
       min_disk: "0"
       min_ram: "0"
       copy_from: "http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img"

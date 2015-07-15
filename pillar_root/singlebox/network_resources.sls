@@ -13,10 +13,10 @@ neutron:
   type_drivers: 
     flat: 
       physnets: 
-        physnet1: 
+        physnet1:
           bridge: "br-flat"
           hosts:
-            "OS-cont>": "eth2"
+            "OS-cont": "eth2"
 
   networks:
     default_net:

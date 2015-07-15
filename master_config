@@ -1,0 +1,12 @@
+
+file_roots:
+  openstack:
+    - /vagrant/salt-openstack/file_root
+
+
+pillar_roots:
+  openstack:
+    - /vagrant/salt-openstack/pillar_root
+
+jinja_trim_blocks: True
+jinja_lstrip_blocks: True
