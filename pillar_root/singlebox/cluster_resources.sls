@@ -86,4 +86,4 @@ nova:
 
 files:
   keystone_admin:
-    path: "/root/openrc/"
+    path: "/root/openrc"
